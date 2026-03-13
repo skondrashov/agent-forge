@@ -1,25 +1,18 @@
 # agent-forge
 
+```bash
+git clone https://github.com/skondrashov/agent-forge.git
+cd agent-forge
+claude go
+```
+
 A meta-project for [Claude Code](https://claude.ai/code) that audits and upgrades multi-agent systems across your coding projects.
 
 You register your projects. The forge scans them against a pattern library, identifies gaps, and propagates best practices — one project at a time.
 
-## Setup
+Say `go` (or `start`, `begin`, or any generic start command) and the forgemaster takes over. On first run it walks you through setup — asks what projects you have, scans their existing agent systems, registers them, and runs the first audit. On return visits, it picks up where it left off.
 
-```bash
-git clone https://github.com/skondrashov/agent-forge.git
-cd agent-forge
-```
-
-## Usage
-
-Open agent-forge in Claude Code and say:
-
-```
-light the forge
-```
-
-On first run, the forgemaster walks you through setup — asks what projects you have, scans their existing agent systems, registers them, and runs the first audit. On return visits, it picks up where it left off.
+This is the same convention used by every project the forge manages — `go` always activates the default role (forgemaster for the forge, orchestrator or steward for your projects).
 
 The forgemaster runs a loop:
 
@@ -31,10 +24,11 @@ The forgemaster runs a loop:
 
 ## What It Looks For
 
-The forge audits for four patterns:
+The forge audits for five patterns:
 
 | Pattern | What it is |
 |---------|-----------|
+| **Steward** | Single-agent default for new/small projects — one agent that self-manages context and proposes its own role splits |
 | **Startup Protocol** | Standalone `PROTOCOL.md` with timestamps, forum voting, ref doc routing |
 | **Shutdown Reflection** | Agents evaluate their context at session end; feedback fixes the docs |
 | **Reference Doc Splitting** | Slim `AGENTS.md` + role-specific `ref/*.md` files to reduce context bloat |
@@ -54,6 +48,7 @@ agents/
 audits/
   current.md           # Latest gap analysis (overwritten each cycle)
 patterns/
+  steward.md           # Single-agent default pattern + template
   protocol.md          # Startup protocol pattern + template
   reflection.md        # Shutdown reflection pattern + template
   ref-docs.md          # Reference doc splitting pattern + template

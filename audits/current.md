@@ -15,14 +15,16 @@
 | Role file ref doc routing | | | |
 | Forum voting minimums | | | |
 | Agent role files in agents/ | | | |
+| Steward (single-agent default) | | | |
 
 ## Maturity Levels
 
 <!-- Rank projects after scanning:
 1. **Full** — all applicable patterns adopted, self-improving loop operational
 2. **Structured** — has protocol and separate AGENTS.md, missing reflection/feedback
-3. **Embedded** — agent system lives inside CLAUDE.md, no protocol file
-4. **None** — no agent system
+3. **Minimal** — intentionally lightweight: single steward agent with memory, no protocol/forum. Valid end state for small projects.
+4. **Embedded** — agent system lives inside CLAUDE.md, no protocol file
+5. **None** — no agent system
 -->
 
 ---

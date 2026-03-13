@@ -53,8 +53,9 @@ Rank projects:
 
 1. **Full** — all applicable patterns adopted, self-improving loop operational
 2. **Structured** — has protocol and separate AGENTS.md, missing reflection/feedback
-3. **Embedded** — agent system lives inside CLAUDE.md, no protocol file
-4. **None** — no agent system
+3. **Minimal** — intentionally lightweight: single steward agent with memory, no protocol/forum (see `patterns/steward.md`). This is a valid end state for small projects, not just a waypoint.
+4. **Embedded** — agent system lives inside CLAUDE.md, no protocol file
+5. **None** — no agent system
 
 ## 5. Write Upgrade Plans
 

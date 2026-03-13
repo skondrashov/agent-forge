@@ -26,6 +26,7 @@ Before modifying any project:
 
 Common operations:
 
+- **Bootstrap steward** — for projects with no agent system, set up the steward pattern: create `agents/steward.md` and `memory/steward.md`. Adapt the steward's task description to the project's domain. See `patterns/steward.md`.
 - **Extract PROTOCOL.md** — pull startup/shutdown/communication rules out of CLAUDE.md into a standalone file. Update CLAUDE.md to point to it.
 - **Extract AGENTS.md** — pull architecture/agent info out of CLAUDE.md. CLAUDE.md keeps project overview + build commands only.
 - **Add protocol steps** — timestamps, reflection, voting minimums. Insert at the right position and renumber.

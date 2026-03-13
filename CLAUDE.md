@@ -8,13 +8,13 @@ You register your projects in `agents.md`. The forge scans them, compares agains
 
 ## Getting Started
 
-Open this project in Claude Code and say: **`light the forge`**
+Open this project in Claude Code and say **`go`**. The forgemaster takes over.
 
-On first run, the forgemaster walks you through setup — asks what projects you have, scans them, and runs the first audit. On return visits, it picks up where it left off.
+On first run it walks you through setup — asks what projects you have, scans them, and runs the first audit. On return visits, it picks up where it left off.
 
 ## Key Files
 
 - `agents.md` — Project registry (your projects and their agent roles)
 - `agents/` — Forge agent role files (assayer, smith, keeper, forgemaster)
 - `audits/current.md` — Latest cross-project gap analysis with concrete fixes
-- `patterns/` — Reusable agent system patterns (protocol, reflection, ref-docs, feedback)
+- `patterns/` — Reusable agent system patterns (steward, protocol, reflection, ref-docs, feedback)

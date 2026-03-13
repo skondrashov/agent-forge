@@ -40,12 +40,17 @@ How agents operate on {project}. For project architecture, see `AGENTS.md`.
 - **Step 5 (vote before posting)**: Forces agents to engage with existing work before adding noise.
 - **Step 10 (reflection)**: Feeds the self-improving context loop.
 
+## When to Use
+
+All projects with 3+ agents. For 2-agent projects, the protocol can live in the orchestrator's role file instead of a standalone file.
+
+## When to Skip
+
+Solo-agent projects, or projects where the orchestrator file already covers the protocol adequately.
+
 ## Adoption Status
 
 | Project | Has PROTOCOL.md | Has timestamps | Has ref doc routing | Has reflection step |
 |---------|----------------|----------------|--------------------|--------------------|
-| thisminute | Yes | Yes | Yes | Yes |
-| mainmenu | Yes | No | No | No |
-| AGI | No (uses AGENT_INSTRUCTIONS.md) | No | No | No |
-| RTS | No (uses AGENT_INSTRUCTIONS.md) | No | No | No |
-| RTS-Bevy | No (uses AGENT_INSTRUCTIONS.md) | No | No | No |
+
+<!-- Fill in during audits -->

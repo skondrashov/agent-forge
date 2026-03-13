@@ -62,12 +62,23 @@ Agents identify gaps → Orchestrator captures per-layer feedback
 
 Without BOTH the orchestrator collection AND the librarian processing, the loop is broken.
 
+## When to Use
+
+Any project with 3+ agents and persistent documentation. The loop pays for itself after 3-4 spawn cycles.
+
+## When to Skip
+
+Projects with 1-2 agents where the orchestrator can just fix things directly. The overhead of routing feedback through a librarian isn't worth it.
+
+## Adaptation Notes
+
+- **No librarian?** Add "between-spawns maintenance" to the orchestrator instead — fix flagged docs, update AGENTS.md, triage messages. This gets 80% of the value.
+- **No ref docs?** Remove that layer from the reflection prompt. Don't ask about things that don't exist.
+- **Domain-specific layers**: Consider adding project-specific layers (e.g., "Game APIs you discovered that aren't recorded anywhere" for game projects).
+
 ## Adoption Status
 
 | Project | Orchestrator collects | Librarian processes | Loop complete |
 |---------|----------------------|--------------------|-|
-| thisminute | Yes | Yes | Yes |
-| mainmenu | No | No | No |
-| AGI | No | No | No |
-| RTS | No | No | No |
-| RTS-Bevy | No | No | No |
+
+<!-- Fill in during audits -->

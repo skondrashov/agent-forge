@@ -33,21 +33,27 @@ After reading an agent's output and before spawning the next:
 
 ## Full Librarian Template
 
-See `~/thisminute/agents/librarian.md` for the most evolved version, which includes:
-- Forum cleaning (7 tasks)
-- Memory maintenance
-- Doc currency checks
-- Cross-reference verification
-- Agent catalog updates
-- Context feedback processing
-- Code hygiene audits
+For projects with a dedicated librarian, include:
+- Forum cleaning (archive resolved threads, remove excessive downvotes)
+- Memory maintenance (remove stale info, consolidate)
+- Doc currency checks (cross-reference AGENTS.md against code)
+- Context feedback processing (apply shutdown reflections to the right files)
+- Agent file maintenance (are instructions clear, tasks well-defined?)
+
+## When to Use
+
+- Projects with 5+ agents (enough communication to need cleanup)
+- Projects where the forum grows past ~200 lines per cycle
+- Projects where doc quality visibly decays between audits
+
+## When to Skip
+
+- Projects with 2-3 agents (orchestrator can self-maintain)
+- Projects with short, focused agent sessions (not enough drift to matter)
 
 ## Adoption Status
 
 | Project | Has librarian | Processes feedback | Forum cleanup |
 |---------|--------------|-------------------|---------------|
-| thisminute | Yes (full) | Yes | Yes |
-| mainmenu | No | No | No |
-| AGI | Yes (basic) | No | Basic |
-| RTS | Yes (basic) | No | Basic |
-| RTS-Bevy | Yes (basic) | No | Basic |
+
+<!-- Fill in during audits -->

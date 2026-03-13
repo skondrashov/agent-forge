@@ -11,20 +11,15 @@ git clone https://github.com/skondrashov/agent-forge.git
 cd agent-forge
 ```
 
-Add your projects to `agents.md`:
-
-```markdown
-| myapp    | `~/myapp`    | SaaS dashboard | 5 (builder, tester, designer, skeptic, orchestrator) |
-| ml-thing | `~/ml-thing` | ML pipeline    | 3 (builder, skeptic, orchestrator)                   |
-```
-
 ## Usage
 
 Open agent-forge in Claude Code and say:
 
 ```
-you are the orchestrator
+light the forge
 ```
+
+On first run, the orchestrator walks you through setup — asks what projects you have, scans their existing agent systems, registers them, and runs the first audit. On return visits, it picks up where it left off.
 
 The orchestrator runs a loop:
 
@@ -83,3 +78,7 @@ If the auditor notices a project doing something well that isn't in the library,
 ```
 
 The pattern library grows from what actually works, not from theory.
+
+## Disclaimer
+
+This repo contains instructions that are read directly by Claude Code as project context. You should never blindly clone and use context files sourced from the internet — they can influence model behavior in ways you don't expect. Read through the files in this repo and understand what they do before using them. If you've vetted the contents and they match how you want your agent systems to work, go for it.

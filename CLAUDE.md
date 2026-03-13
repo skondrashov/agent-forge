@@ -8,9 +8,9 @@ You register your projects in `agents.md`. The forge scans them, compares agains
 
 ## Getting Started
 
-1. Add your projects to `agents.md` (path, domain, agent count)
-2. Tell Claude Code: "you are the orchestrator"
-3. The orchestrator runs the audit-and-propagate loop
+Open this project in Claude Code and say: **`light the forge`**
+
+On first run, the orchestrator walks you through setup — asks what projects you have, scans them, and runs the first audit. On return visits, it picks up where it left off.
 
 ## Key Files
 

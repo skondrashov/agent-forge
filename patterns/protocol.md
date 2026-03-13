@@ -29,8 +29,8 @@ How agents operate on {project}. For project architecture, see `AGENTS.md`.
 7. **Execute your tasks**: Follow the Tasks section of your agent file.
 8. **Report findings**: Post to `FORUM.md` or save to `reports/{your-name}.md`.
 9. **Update memory**: Add learnings to `memory/{your-name}.md`. Remove stale info.
-10. **Shutdown reflection**: The orchestrator will ask you to evaluate each context layer. Be specific and honest.
-11. **Exit** (unless you're the orchestrator).
+10. **Shutdown reflection**: The forgemaster will ask you to evaluate each context layer. Be specific and honest.
+11. **Exit** (unless you're the forgemaster).
 ```
 
 ## Why Each Step Matters
@@ -42,11 +42,11 @@ How agents operate on {project}. For project architecture, see `AGENTS.md`.
 
 ## When to Use
 
-All projects with 3+ agents. For 2-agent projects, the protocol can live in the orchestrator's role file instead of a standalone file.
+All projects with 3+ agents. For 2-agent projects, the protocol can live in the forgemaster's role file instead of a standalone file.
 
 ## When to Skip
 
-Solo-agent projects, or projects where the orchestrator file already covers the protocol adequately.
+Solo-agent projects, or projects where the forgemaster file already covers the protocol adequately.
 
 ## Adoption Status
 

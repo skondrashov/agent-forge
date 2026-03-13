@@ -19,9 +19,9 @@ Open agent-forge in Claude Code and say:
 light the forge
 ```
 
-On first run, the orchestrator walks you through setup — asks what projects you have, scans their existing agent systems, registers them, and runs the first audit. On return visits, it picks up where it left off.
+On first run, the forgemaster walks you through setup — asks what projects you have, scans their existing agent systems, registers them, and runs the first audit. On return visits, it picks up where it left off.
 
-The orchestrator runs a loop:
+The forgemaster runs a loop:
 
 1. **Audit** — scans every registered project's agent system
 2. **Review** — compares against the pattern library, ranks by priority
@@ -38,7 +38,7 @@ The forge audits for four patterns:
 | **Startup Protocol** | Standalone `PROTOCOL.md` with timestamps, forum voting, ref doc routing |
 | **Shutdown Reflection** | Agents evaluate their context at session end; feedback fixes the docs |
 | **Reference Doc Splitting** | Slim `AGENTS.md` + role-specific `ref/*.md` files to reduce context bloat |
-| **Librarian Feedback Loop** | A doc-maintenance agent (or orchestrator task) that processes reflection feedback |
+| **Keeper Feedback Loop** | A doc-maintenance agent (or forgemaster task) that processes reflection feedback |
 
 Each pattern has a template in `patterns/` with problem statement, solution, and when-to-use guidance.
 
@@ -47,26 +47,26 @@ Each pattern has a template in `patterns/` with problem statement, solution, and
 ```
 agents.md              # Your project registry
 agents/
-  orchestrator.md      # Runs the audit-propagate loop
-  auditor.md           # Scans projects against patterns
-  propagator.md        # Applies upgrades to target projects
-  librarian.md         # Maintains patterns, challenges self-audit
+  forgemaster.md       # Runs the audit-propagate loop
+  assayer.md           # Scans projects against patterns
+  smith.md             # Applies upgrades to target projects
+  keeper.md            # Maintains patterns, challenges self-audit
 audits/
   current.md           # Latest gap analysis (overwritten each cycle)
 patterns/
   protocol.md          # Startup protocol pattern + template
   reflection.md        # Shutdown reflection pattern + template
   ref-docs.md          # Reference doc splitting pattern + template
-  feedback.md          # Librarian feedback loop pattern + template
+  feedback.md          # Keeper feedback loop pattern + template
 ```
 
 ## How Projects Get Upgraded
 
-The propagator adapts patterns to each project's domain and conventions. It doesn't paste templates blindly — it reads the existing system first, preserves project identity, and only adds what's missing. A 3-agent project won't get a librarian it doesn't need. A 50-line AGENTS.md won't get ref doc splitting.
+The smith adapts patterns to each project's domain and conventions. It doesn't paste templates blindly — it reads the existing system first, preserves project identity, and only adds what's missing. A 3-agent project won't get a keeper it doesn't need. A 50-line AGENTS.md won't get ref doc splitting.
 
 ## Adding New Patterns
 
-If the auditor notices a project doing something well that isn't in the library, it flags it. The librarian creates the pattern file:
+If the assayer notices a project doing something well that isn't in the library, it flags it. The keeper creates the pattern file:
 
 ```markdown
 # Pattern: {Name}

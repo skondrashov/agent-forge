@@ -11,7 +11,7 @@
 | Slim AGENTS.md + ref/ docs | | | |
 | Timestamp in startup | | | |
 | Shutdown reflection | | | |
-| Librarian feedback loop | | | |
+| Keeper feedback loop | | | |
 | Role file ref doc routing | | | |
 | Forum voting minimums | | | |
 | Agent role files in agents/ | | | |

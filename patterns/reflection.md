@@ -6,9 +6,9 @@ Agent context (role files, AGENTS.md, memory, forum) drifts from reality over ti
 
 ## Solution
 
-Before ending an agent's session, the orchestrator asks it to evaluate each layer of context it received. Feedback is routed to the librarian (or equivalent doc-maintenance agent) for processing.
+Before ending an agent's session, the forgemaster asks it to evaluate each layer of context it received. Feedback is routed to the keeper (or equivalent doc-maintenance agent) for processing.
 
-## Template — Add to orchestrator.md
+## Template — Add to forgemaster.md
 
 ```markdown
 ## Shutdown Reflection
@@ -27,13 +27,13 @@ Before ending an agent's session, ask it to evaluate **each layer of context** i
 > 8. **Anything else** — Files you had to hunt for. Things you learned the hard way."
 
 Capture the response and:
-1. **Actionable feedback** → send to the librarian (`messages/librarian.md`)
+1. **Actionable feedback** → send to the keeper (`messages/keeper.md`)
 2. **Quick fixes** (wrong file path, stale note) → fix immediately
 3. **Pattern detection** — if multiple agents flag the same gap, add it to AGENTS.md
 4. **Spawn prompt improvements** → adjust your own approach
 ```
 
-## Template — Add to librarian.md (or equivalent)
+## Template — Add to keeper.md (or equivalent)
 
 ```markdown
 ## Process Agent Context Feedback
@@ -42,7 +42,7 @@ Context layers and where to fix them:
 
 | Layer | File(s) to update |
 |---|---|
-| Spawn prompt | `orchestrator.md` |
+| Spawn prompt | `forgemaster.md` |
 | Role file | `agents/{name}.md` |
 | AGENTS.md | `AGENTS.md` |
 | Reference docs | `ref/*.md` |
@@ -56,11 +56,11 @@ For each piece of feedback: identify the layer, verify the claim, fix it in the 
 ## The Self-Improving Context Loop
 
 ```
-Agents identify gaps → Orchestrator captures per-layer feedback
-→ Librarian fixes the specific doc → Next spawn starts with better context
+Agents identify gaps → Forgemaster captures per-layer feedback
+→ Keeper fixes the specific doc → Next spawn starts with better context
 ```
 
-Without BOTH the orchestrator collection AND the librarian processing, the loop is broken.
+Without BOTH the forgemaster collection AND the keeper processing, the loop is broken.
 
 ## When to Use
 
@@ -68,17 +68,17 @@ Any project with 3+ agents and persistent documentation. The loop pays for itsel
 
 ## When to Skip
 
-Projects with 1-2 agents where the orchestrator can just fix things directly. The overhead of routing feedback through a librarian isn't worth it.
+Projects with 1-2 agents where the forgemaster can just fix things directly. The overhead of routing feedback through a keeper isn't worth it.
 
 ## Adaptation Notes
 
-- **No librarian?** Add "between-spawns maintenance" to the orchestrator instead — fix flagged docs, update AGENTS.md, triage messages. This gets 80% of the value.
+- **No keeper?** Add "between-spawns maintenance" to the forgemaster instead — fix flagged docs, update AGENTS.md, triage messages. This gets 80% of the value.
 - **No ref docs?** Remove that layer from the reflection prompt. Don't ask about things that don't exist.
 - **Domain-specific layers**: Consider adding project-specific layers (e.g., "Game APIs you discovered that aren't recorded anywhere" for game projects).
 
 ## Adoption Status
 
-| Project | Orchestrator collects | Librarian processes | Loop complete |
+| Project | Forgemaster collects | Keeper processes | Loop complete |
 |---------|----------------------|--------------------|-|
 
 <!-- Fill in during audits -->

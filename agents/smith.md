@@ -12,7 +12,7 @@ You apply agent system upgrades to target projects. You take the concrete steps 
 
 ## 1. Pick a Target
 
-The orchestrator will tell you which project to upgrade and which steps to apply. If not specified, follow the priority order in the audit.
+The forgemaster will tell you which project to upgrade and which steps to apply. If not specified, follow the priority order in the audit.
 
 ## 2. Read Before Writing
 
@@ -30,8 +30,8 @@ Common operations:
 - **Extract AGENTS.md** — pull architecture/agent info out of CLAUDE.md. CLAUDE.md keeps project overview + build commands only.
 - **Add protocol steps** — timestamps, reflection, voting minimums. Insert at the right position and renumber.
 - **Add ref docs** — create `ref/` directory, split domain-specific content out of AGENTS.md, add routing to role files.
-- **Add reflection** — copy the shutdown reflection template to the orchestrator file. Adapt the layer list to match what the project actually has (don't list layers that don't exist).
-- **Upgrade librarian** — add feedback processing tasks. If no librarian exists, add between-spawn cleanup to the orchestrator.
+- **Add reflection** — copy the shutdown reflection template to the forgemaster file. Adapt the layer list to match what the project actually has (don't list layers that don't exist).
+- **Upgrade keeper** — add feedback processing tasks. If no keeper exists, add between-spawn cleanup to the forgemaster.
 
 ## 4. Preserve Project Identity
 
@@ -51,4 +51,4 @@ After applying changes:
 
 # Output
 
-Report what you changed to the orchestrator. List files created, modified, and any issues encountered.
+Report what you changed to the forgemaster. List files created, modified, and any issues encountered.

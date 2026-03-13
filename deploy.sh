@@ -20,15 +20,19 @@ if [[ "${1:-}" == "--setup" ]]; then
 
     echo "[2/2] Adding nginx location block..."
     gcloud compute ssh "$INSTANCE" --zone="$ZONE" --command="
-        if ! grep -q '/forge' /etc/nginx/sites-available/thisminute; then
+        NGINX_CONF=/etc/nginx/sites-enabled/thisminute
+        if ! grep -q '/forge' \$NGINX_CONF; then
             sudo sed -i '/location \/static\//i\\
     # Agent Forge - multi-agent system management\\
     location /forge/ {\\
         alias /opt/forge/;\\
         index index.html;\\
-        try_files \\\$uri \\\$uri/ /forge/index.html;\\
     }\\
-' /etc/nginx/sites-available/thisminute
+\\
+    location = /forge {\\
+        return 301 /forge/;\\
+    }\\
+' \$NGINX_CONF
             sudo nginx -t && sudo systemctl reload nginx
             echo 'Nginx config updated.'
         else

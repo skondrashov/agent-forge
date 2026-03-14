@@ -1,7 +1,7 @@
 # agent-forge
 
 ```bash
-git clone --branch v1 https://github.com/skondrashov/agent-forge.git
+git clone --branch v0.1 https://github.com/skondrashov/agent-forge.git
 cd agent-forge
 go
 ```
@@ -24,7 +24,7 @@ The forgemaster runs a loop:
 
 The forge upgrades itself. When the forgemaster starts a returning session, it checks upstream for newer tags. If one exists, it diffs only `patterns/` and `agents/` — your project registry, audits, and any local changes are left alone. It shows you what's new and asks before applying.
 
-**Version scheme**: Upstream tags are `v1`, `v2`, etc. The forgemaster checks for newer tags on the upstream remote at session start. If you fork the template, set your own origin and tag scheme so your fork's versions don't collide with upstream.
+**Version scheme**: Upstream tags follow semver (`v0.1`, `v0.2`, ... toward `v1.0`). The forgemaster checks for newer tags on the upstream remote at session start. If you fork the template, set your own origin and tag scheme so your fork's versions don't collide with upstream.
 
 ## What It Looks For
 

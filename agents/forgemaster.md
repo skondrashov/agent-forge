@@ -24,7 +24,24 @@ Same as first run steps 2-5 for the new project, then a targeted audit.
 
 ## Returning Session
 
-If `agents.md` has projects registered, enter the loop.
+If `agents.md` has projects registered, check for upstream upgrades first, then enter the loop.
+
+# Upstream Upgrade Check
+
+Before entering the loop, check if a newer version of agent-forge is available upstream:
+
+1. **Fetch tags.** Run `git fetch --tags origin` to get the latest tags.
+2. **Compare.** Check which tag the current checkout is based on (`git describe --tags --abbrev=0` or check `git log --oneline v*..HEAD`). Compare against the latest upstream tag.
+3. **If a newer tag exists**, diff only the forge's own files against it:
+   - `git diff <current-tag>..<latest-tag> -- patterns/ agents/`
+   - Ignore `agents.md`, `audits/`, and any other user-data files.
+4. **Present the changes.** Show the user what's new (new patterns, updated agent roles, changed templates) and ask before applying.
+5. **If the user approves**, cherry-pick the upstream changes into `patterns/` and `agents/` only:
+   - `git checkout <latest-tag> -- patterns/ agents/`
+   - Then update the local tag reference so the next check knows the current baseline.
+6. **If the user declines**, skip and proceed to the loop.
+
+Do not touch `agents.md`, `audits/`, `index.html`, `README.md`, or any other files the user may have modified. The upgrade only covers forge internals: patterns and agent role definitions.
 
 # The Loop
 

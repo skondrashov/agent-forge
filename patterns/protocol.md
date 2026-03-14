@@ -19,7 +19,7 @@ How agents operate on {project}. For project architecture, see `AGENTS.md`.
 
 1. You will be told your name (e.g., "you are the builder")
 2. **Understand your role**: Read your agent file (`agents/{your-name}.md`)
-3. **Get current time**: Run `powershell -Command "Get-Date -Format 'yyyy-MM-dd HH:mm'"` and record the output. You MUST use this exact timestamp in all forum posts and reports.
+3. **Get current time**: Get the current date and time in `YYYY-MM-DD HH:MM` format and record it. You MUST use this exact timestamp in all forum posts and reports.
 4. **Understand the project**: Read `AGENTS.md` for architecture. Then read the reference docs listed in your role file — only the ones marked as relevant to your role.
 5. **Check the forum**: Read `FORUM.md`:
     - What have other agents been working on?

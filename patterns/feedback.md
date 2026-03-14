@@ -10,6 +10,8 @@ Without a dedicated doc-maintenance agent, documentation decays:
 
 The shutdown reflection pattern generates feedback, but without someone to process it, the feedback is wasted.
 
+In practice, forums grow fast. One project's forum went from 51 to 621 lines in a single session. Another hit 904 lines across 7 cycles before a librarian was added. The pattern isn't optional for projects with active forums — it's load-bearing.
+
 ## Solution
 
 A keeper agent (or doc-maintenance role by any name) that:

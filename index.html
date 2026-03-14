@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agent Forge — Multi-Agent System Management</title>
-  <meta name="description" content="A meta-project for Claude Code that audits and upgrades multi-agent systems across your coding projects.">
+  <meta name="description" content="A template agent system manager that audits and upgrades multi-agent systems across your coding projects.">
   <script defer data-domain="thisminute.org/forge" src="https://plausible.io/js/script.js"></script>
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>%F0%9F%94%A5</text></svg>">
@@ -215,7 +215,7 @@
     .cta {
       text-align: center;
       padding: 2rem;
-      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
     .cta h2 {
       font-size: 0.75rem;
@@ -317,21 +317,21 @@
     <div class="tagline">Audit and upgrade multi-agent systems across your coding projects</div>
     <div class="links">
       <a href="https://github.com/skondrashov/agent-forge">GitHub</a>
-      <a href="https://claude.ai/code">Claude Code</a>
+      <a href="https://en.wikipedia.org/wiki/Agentic_AI">Agentic AI</a>
     </div>
   </div>
 
   <div class="cta">
-    <h2>Quick Start</h2>
+    <h2><a href="https://github.com/skondrashov/agent-forge" style="color: var(--accent-text); text-decoration: none;">Quick Start</a></h2>
     <details>
-      <summary style="cursor: pointer; display: inline-block; max-width: 540px; margin: 0 auto; padding: 0.75rem 1.25rem; font-size: 0.85rem; color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-dim); border-radius: var(--radius); line-height: 1.5; text-align: left;">This repo contains instructions read directly by Claude Code as project context. Read through every file and understand what it does before running it. Do not use <code>--dangerously-skip-permissions</code> or any permissive mode &mdash; review each action before approving it. <span style="display: block; margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">Click to show install commands</span></summary>
+      <summary style="cursor: pointer; display: inline-block; max-width: 540px; margin: 0 auto; padding: 0.75rem 1.25rem; font-size: 0.85rem; color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-dim); border-radius: var(--radius); line-height: 1.5; text-align: center;">I understand that I should review the code I'm about to run before I run it.</summary>
       <div style="margin-top: 1rem;">
-        <pre><span class="cmd-comment"># Clone next to your existing projects</span>
+        <pre><span class="cmd-comment"># Clone next to your projects (or where you'll start new ones)</span>
 git clone https://github.com/skondrashov/agent-forge.git
 
 <span class="cmd-comment"># Start it up</span>
 cd agent-forge
-claude go</pre>
+go</pre>
       </div>
     </details>
   </div>
@@ -340,8 +340,7 @@ claude go</pre>
 
     <section>
       <h2>What It Is</h2>
-      <p>Agent Forge is a meta-project for <a href="https://claude.ai/code">Claude Code</a> that manages multi-agent systems. You register your projects, and the forge scans them against a pattern library, identifies gaps, and propagates best practices &mdash; one project at a time.</p>
-      <p>Clone it next to your projects, open it in Claude Code, and say <code>go</code>.</p>
+      <p>Agent Forge is a template agent system manager. You register your projects, and the forge scans them against a pattern library, identifies gaps, and propagates best practices &mdash; one project at a time.</p>
     </section>
 
     <section class="how-it-works">

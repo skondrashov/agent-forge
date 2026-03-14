@@ -57,6 +57,8 @@ Rank projects:
 4. **Embedded** — agent system lives inside CLAUDE.md, no protocol file
 5. **None** — no agent system
 
+**Important:** Maturity levels measure pattern adoption, not effectiveness. A project at Structured+ that's well-adapted to its domain (e.g., using checkpoints instead of memory files, or `.claude/` instead of `memory/`) may be better served than a project at Full with patterns it doesn't use. When writing upgrade plans, ask "would this pattern actually help this project?" — not just "is this pattern missing?"
+
 ## 5. Write Upgrade Plans
 
 For each project below Full maturity (including agent-forge), write concrete steps:

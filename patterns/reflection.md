@@ -79,6 +79,6 @@ Projects with 1-2 agents where the forgemaster can just fix things directly. The
 ## Adoption Status
 
 | Project | Forgemaster collects | Keeper processes | Loop complete |
-|---------|----------------------|--------------------|-|
+|---------|----------------------|--------------------|---------------|
 
 <!-- Fill in during audits -->

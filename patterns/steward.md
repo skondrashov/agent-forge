@@ -2,7 +2,7 @@
 
 ## Problem
 
-Raw Claude Code can set up an agent system for a project, but it doesn't know *your* ecosystem's conventions — what role files are, how memory works, when to add a protocol, what the growth path looks like. Every project it bootstraps will invent its own structure, and the forge can't audit what it can't recognize.
+A raw AI coding agent can set up an agent system for a project, but it doesn't know *your* ecosystem's conventions — what role files are, how memory works, when to add a protocol, what the growth path looks like. Every project it bootstraps will invent its own structure, and the forge can't audit what it can't recognize.
 
 ## Solution
 
@@ -15,7 +15,7 @@ The value isn't "start with one agent" (obvious). The value is that the steward 
 - The growth path: when to add roles, PROTOCOL.md, FORUM.md, ref docs
 - The file conventions that make the project auditable by the forge
 
-This makes the project **self-sufficient from day one**. No special command needed — the user opens the project in Claude Code, starts working, and the agent naturally knows the playbook because CLAUDE.md → AGENTS.md → agents/steward.md teaches it.
+This makes the project **self-sufficient from day one**. No special command needed — the user opens the project in their AI coding agent, starts working, and the agent naturally knows the playbook because CLAUDE.md → AGENTS.md → agents/steward.md teaches it.
 
 ## Template
 

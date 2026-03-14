@@ -3,16 +3,14 @@
 ```bash
 git clone https://github.com/skondrashov/agent-forge.git
 cd agent-forge
-claude go
+go
 ```
 
-A meta-project for [Claude Code](https://claude.ai/code) that audits and upgrades multi-agent systems across your coding projects.
+A template agent system manager that audits and upgrades multi-agent systems across your coding projects.
 
 You register your projects. The forge scans them against a pattern library, identifies gaps, and propagates best practices — one project at a time.
 
-Say `go` (or `start`, `begin`, or any generic start command) and the forgemaster takes over. On first run it walks you through setup — asks what projects you have, scans their existing agent systems, registers them, and runs the first audit. On return visits, it picks up where it left off.
-
-This is the same convention used by every project the forge manages — `go` always activates the default role (forgemaster for the forge, orchestrator or steward for your projects).
+On first run, the forgemaster walks you through setup — asks what projects you have, scans their existing agent systems, registers them, and runs the first audit. On return visits, it picks up where it left off.
 
 The forgemaster runs a loop:
 
@@ -76,4 +74,4 @@ The pattern library grows from what actually works, not from theory.
 
 ## Disclaimer
 
-This repo contains instructions that are read directly by Claude Code as project context. You should never blindly clone and use context files sourced from the internet — they can influence model behavior in ways you don't expect. Read through the files in this repo and understand what they do before using them. If you've vetted the contents and they match how you want your agent systems to work, go for it.
+This repo contains instructions that are read directly by AI coding agents as project context. You should never blindly clone and use context files sourced from the internet — they can influence model behavior in ways you don't expect. Read through the files in this repo and understand what they do before using them. If you've vetted the contents and they match how you want your agent systems to work, go for it.

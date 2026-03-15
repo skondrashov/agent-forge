@@ -1,7 +1,7 @@
 # agent-forge
 
 ```bash
-git clone --branch v0.2 https://github.com/skondrashov/agent-forge.git
+git clone --branch v0.3 https://github.com/skondrashov/agent-forge.git
 cd agent-forge
 claude go
 ```

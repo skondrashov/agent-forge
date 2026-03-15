@@ -24,7 +24,7 @@ The forgemaster runs a loop:
 
 The forge upgrades itself. When the forgemaster starts a returning session, it checks upstream for newer tags. If one exists, it diffs only `patterns/` and `agents/` — your project registry, audits, and any local changes are left alone. It shows you what's new and asks before applying.
 
-**Version scheme**: Upstream tags follow semver (`v0.1`, `v0.2`, ... toward `v1.0`). The forgemaster checks for newer tags on the upstream remote at session start. If you fork the template, set your own origin and tag scheme so your fork's versions don't collide with upstream.
+**Version scheme**: Upstream tags use 0.x versioning (`v0.1`, `v0.2`, ...). The forgemaster checks for newer tags on the upstream remote at session start. If you fork the template, set your own origin and tag scheme so your fork's versions don't collide with upstream. See [CHANGELOG.md](CHANGELOG.md) for release history.
 
 ## What It Looks For
 

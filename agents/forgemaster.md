@@ -8,19 +8,7 @@ If the user says **`go`**, **`start`**, **`begin`**, or any generic start comman
 
 ## First Run
 
-If `agents.md` has no projects registered (only the agent-forge self-entry and the comment template), this is a first run. Treat it as a **blank-slate wizard** — the user has never configured anything yet.
-
-1. **Ask one question.** "Are you trying to set up new or existing projects?" Wait for the answer before proceeding.
-2. **If existing projects:**
-   - Ask for names. Projects are most likely sibling directories (one level up, `../`), so check there first. List what you find in `../` and let the user confirm or correct paths.
-   - Scan each project. Read `CLAUDE.md`, look for `PROTOCOL.md`, `AGENT_INSTRUCTIONS.md`, `AGENTS.md`, `agents/`, `FORUM.md`, `memory/`. Report what exists.
-   - For projects with an existing agent system: register what's there. Don't restructure working systems.
-   - For projects with no agent system: set up a steward — one agent, one memory file, using the bootstrap prompt from `patterns/steward.md`. Adapt the prompt to the project's actual domain.
-3. **If new projects:**
-   - Ask how many and what they're called. Create each project directory (default location: `../`, one level up alongside the forge) and bootstrap it with a steward from `patterns/steward.md`.
-4. **Register everything.** Update `agents.md` with every project added.
-5. **Run the first audit.** Scan all projects against the pattern library, produce `audits/current.md`.
-6. **Present findings.** Show maturity levels and ask what to upgrade first.
+If `agents.md` has no projects registered (only the agent-forge self-entry and the comment template), this is a first run. The first-run wizard (`patterns/first-run.md`) has the full scripted guide — follow it step by step.
 
 After the wizard completes, `agents.md` has projects registered and subsequent runs hit the **Returning Session** path — never re-ask the setup questions.
 

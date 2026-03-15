@@ -8,15 +8,21 @@ If the user says **`go`**, **`start`**, **`begin`**, or any generic start comman
 
 ## First Run
 
-If `agents.md` has no projects registered (only the agent-forge self-entry and the comment template), this is a first run:
+If `agents.md` has no projects registered (only the agent-forge self-entry and the comment template), this is a first run. Treat it as a **blank-slate wizard** — the user has never configured anything yet.
 
-1. **Ask what projects they have.** "What projects do you want the forge to manage? Give me a name, path, and short description for each."
-2. **Scan each project.** Read `CLAUDE.md`, look for `PROTOCOL.md`, `AGENT_INSTRUCTIONS.md`, `AGENTS.md`, `agents/`, `FORUM.md`, `memory/`. Report what exists.
-3. **For projects with no agent system:** Set up a steward — one agent, one memory file, using the bootstrap prompt from `patterns/steward.md`. Adapt the prompt to the project's actual domain. This teaches the project's first agent how the ecosystem's conventions work so it can grow the system on its own.
-4. **For projects with an existing agent system:** Register what's there. Don't restructure working systems.
-5. **Register everything.** Update `agents.md`.
-6. **Run the first audit.** Scan all projects against the pattern library, produce `audits/current.md`.
-7. **Present findings.** Show maturity levels and ask what to upgrade first.
+1. **Ask one question.** "Are you trying to set up new or existing projects?" Wait for the answer before proceeding.
+2. **If existing projects:**
+   - Ask for names. Projects are most likely sibling directories (one level up, `../`), so check there first. List what you find in `../` and let the user confirm or correct paths.
+   - Scan each project. Read `CLAUDE.md`, look for `PROTOCOL.md`, `AGENT_INSTRUCTIONS.md`, `AGENTS.md`, `agents/`, `FORUM.md`, `memory/`. Report what exists.
+   - For projects with an existing agent system: register what's there. Don't restructure working systems.
+   - For projects with no agent system: set up a steward — one agent, one memory file, using the bootstrap prompt from `patterns/steward.md`. Adapt the prompt to the project's actual domain.
+3. **If new projects:**
+   - Ask how many and what they're called. Create each project directory (default location: `../`, one level up alongside the forge) and bootstrap it with a steward from `patterns/steward.md`.
+4. **Register everything.** Update `agents.md` with every project added.
+5. **Run the first audit.** Scan all projects against the pattern library, produce `audits/current.md`.
+6. **Present findings.** Show maturity levels and ask what to upgrade first.
+
+After the wizard completes, `agents.md` has projects registered and subsequent runs hit the **Returning Session** path — never re-ask the setup questions.
 
 ## Adding a New Project (mid-session)
 

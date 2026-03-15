@@ -107,10 +107,10 @@ When a forge manages multiple projects that share infrastructure (hosting, deplo
 |---|---|---|
 | Scope | All work within one project | One concern across all projects |
 | Authority | Owns everything in its project | Owns production, not product decisions |
-| Communication | Memory only (single agent) | **Deploy queue** — other projects submit structured requests |
+| Communication | Memory only (single agent) | **Request queue** — other projects submit structured requests |
 | Growth path | Splits into domain roles | Splits into deployer, watcher, economist |
 
-**The deploy queue:** Create a `DEPLOY_QUEUE.md` at the service steward's project root. Project agents submit structured requests (project, branch/commit, what changed, urgency). The steward processes the queue on its cycle — validates, pushes, deploys, cache-busts, and marks requests complete.
+**The request queue:** Create a queue file (e.g. `REQUESTS.md`) at the service steward's project root. Project agents submit structured requests (project, branch/commit, what changed, urgency). The steward processes the queue on its cycle — validates, pushes, deploys, cache-busts, and marks requests complete.
 
 **Template additions for `agents/steward.md`:**
 ```markdown
@@ -120,9 +120,9 @@ You own deploys, monitoring, and infrastructure across all ecosystem projects.
 You do NOT own product decisions — projects own their code, you own the pipe
 to production.
 
-# Deploy Queue
+# Request Queue
 
-Other projects submit deploy requests to `DEPLOY_QUEUE.md`. On each cycle:
+Other projects submit deploy requests to your queue file. On each cycle:
 1. Check the queue for pending requests
 2. Validate the request (correct branch, tests pass, no conflicts)
 3. Push, deploy, cache-bust as needed

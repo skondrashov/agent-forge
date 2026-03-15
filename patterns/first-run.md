@@ -76,7 +76,7 @@ Adds a keeper/librarian role. Template: `patterns/feedback.md`
 
 **When none of the tiers fit:**
 It's fine to say so. Some projects don't map cleanly to these hierarchies — unusual domains, novel workflows, or structures you haven't seen before. If you're unsure, be honest and offer the user three options:
-1. **Search rhizome for inspiration** — look at how other agent systems have been structured for similar domains (browse forge.thisminute.org/rhizome for relevant examples)
+1. **Search for inspiration** — look at how other agent systems have been structured for similar domains (check your forge's knowledge base or reference docs for relevant examples)
 2. **Take our best guess** — propose a custom structure based on what you do understand, flag what you're uncertain about, and plan to revisit after the project has some real work behind it
 3. **Start with a steward** — safe default. The steward knows the growth path and can propose a split once the project's actual needs become clear
 
@@ -152,3 +152,14 @@ Show a compact summary:
 
 Ready to run the loop, or want to adjust anything first?
 ```
+
+## When to Use
+
+- Setting up the forge for the first time with no projects registered yet
+- Onboarding a batch of existing projects that don't have agent systems
+- Starting a brand-new project from scratch under a forge
+
+## When to Skip
+
+- The forge already has projects registered and you're adding one more — just register it directly in `AGENTS.md` and set up its agent structure by hand (or use the steward pattern)
+- The project already has a working agent system — register it as-is without running the wizard

@@ -7,6 +7,17 @@ This project uses 0.x versioning.
 
 ## [Unreleased]
 
+## [0.4] - 2026-03-15
+
+### Added
+
+- Smoke test validated: cold-start bootstrap produces correct agent systems for 3 synthetic projects (Go API, React+Python app, solo hobby project) — 40/40 structural checks pass
+- README now documents all 7 patterns (was 5)
+
+### Changed
+
+- Quickstart pinned to v0.4
+
 ## [0.3] - 2026-03-15
 
 ### Added
@@ -51,7 +62,8 @@ This project uses 0.x versioning.
 - Self-upgrade mechanism via upstream tag checking
 - README with quickstart and structure docs
 
-[Unreleased]: https://github.com/skondrashov/agent-forge/compare/v0.3...HEAD
+[Unreleased]: https://github.com/skondrashov/agent-forge/compare/v0.4...HEAD
+[0.4]: https://github.com/skondrashov/agent-forge/compare/v0.3...v0.4
 [0.3]: https://github.com/skondrashov/agent-forge/compare/v0.2...v0.3
 [0.2]: https://github.com/skondrashov/agent-forge/compare/v0.1...v0.2
 [0.1]: https://github.com/skondrashov/agent-forge/releases/tag/v0.1

@@ -1,7 +1,7 @@
 # agent-forge
 
 ```bash
-git clone --branch v0.3 https://github.com/skondrashov/agent-forge.git
+git clone --branch v0.4 https://github.com/skondrashov/agent-forge.git
 cd agent-forge
 claude go
 ```
@@ -32,7 +32,7 @@ The forge upgrades itself. When the forgemaster starts a returning session, it c
 
 ## What It Looks For
 
-The forge audits for five patterns:
+The forge audits for seven patterns:
 
 | Pattern | What it is |
 |---------|-----------|
@@ -41,6 +41,8 @@ The forge audits for five patterns:
 | **Shutdown Reflection** | Agents evaluate their context at session end; feedback fixes the docs |
 | **Reference Doc Splitting** | Slim `AGENTS.md` + role-specific `ref/*.md` files to reduce context bloat |
 | **Keeper Feedback Loop** | A doc-maintenance agent (or forgemaster task) that processes reflection feedback |
+| **Challenge Loop** | Paired skeptic/strategist roles that enforce evidence-based review before strategy decisions |
+| **First-Run Wizard** | Conversational bootstrap that scans existing projects or designs new agent systems from a 5-tier hierarchy |
 
 Each pattern has a template in `patterns/` with problem statement, solution, and when-to-use guidance.
 
@@ -61,6 +63,8 @@ patterns/
   reflection.md        # Shutdown reflection pattern + template
   ref-docs.md          # Reference doc splitting pattern + template
   feedback.md          # Keeper feedback loop pattern + template
+  challenge-loop.md    # Skeptic/strategist review cycle pattern
+  first-run.md         # Bootstrap wizard for new projects
 ```
 
 ## How Projects Get Upgraded

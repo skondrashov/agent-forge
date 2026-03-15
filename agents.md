@@ -1,6 +1,8 @@
 # agent-forge
 
-Template agent system manager. Audits and upgrades multi-agent systems across your projects. Say **`go`** to start — the forgemaster scans registered projects against the pattern library and applies upgrades.
+Template agent system manager. Audits and upgrades multi-agent systems across your projects.
+
+If the user says "go", "start", or "begin": read `agents/forgemaster.md` and follow its activation instructions.
 
 ## Key Files
 

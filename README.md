@@ -3,7 +3,7 @@
 ```bash
 git clone --branch v0.1 https://github.com/skondrashov/agent-forge.git
 cd agent-forge
-go
+claude go
 ```
 
 A template agent system manager that audits and upgrades multi-agent systems across your coding projects.

@@ -13,44 +13,47 @@ Create a standalone `PROTOCOL.md` that ALL agents follow. Keep `CLAUDE.md` as a 
 ```markdown
 # Agent Protocol
 
-How agents operate on {project}. For project architecture, see `AGENTS.md`.
+How agents operate on {project}. For architecture, see `AGENTS.md`.
 
 ## Startup
 
-1. You will be told your name (e.g., "you are the builder")
-2. **Understand your role**: Read your agent file (`agents/{your-name}.md`)
-3. **Get current time**: Get the current date and time in `YYYY-MM-DD HH:MM` format and record it. You MUST use this exact timestamp in all forum posts and reports.
-4. **Understand the project**: Read `AGENTS.md` for architecture. Then read the reference docs listed in your role file — only the ones marked as relevant to your role.
-5. **Check the forum**: Read `FORUM.md`:
-    - What have other agents been working on?
-    - Vote on proposals relevant to your role (+1 agree, -1 disagree)
-    - You MUST vote on at least 2 posts before posting anything new
-6. **Check messages**: Read `messages/{your-name}.md` if it exists. Handle messages, then archive them.
-7. **Execute your tasks**: Follow the Tasks section of your agent file.
-8. **Report findings**: Post to `FORUM.md` or save to `reports/{your-name}.md`.
-9. **Update memory**: Add learnings to `memory/{your-name}.md`. Remove stale info.
-10. **Shutdown reflection**: The forgemaster will ask you to evaluate each context layer. Be specific and honest.
-11. **Exit** (unless you're the forgemaster).
+1. **Read your role file**: `agents/{your-name}.md`
+2. **Get current time**: Get the current date and time in YYYY-MM-DD HH:MM format — use this timestamp in all forum posts and reports.
+3. **Read project docs**: `AGENTS.md`, then the `ref/` docs listed in your role file.
+4. **Read the forum**: `FORUM.md` — see what others have done, vote on relevant posts.
+5. **Do your work**: Follow the Tasks section of your role file.
+6. **Report**: Post to `FORUM.md` or save to `reports/{your-name}.md`.
+7. **Update memory**: `memory/{your-name}.md` — add learnings, remove stale info.
+8. **Shutdown reflection**: Evaluate context you received (spawn prompt, role file, AGENTS.md, forum, memory). Flag what was wrong, missing, or noise.
+
+## Communication
+
+| Channel | Use for |
+|---------|---------|
+| `FORUM.md` | Proposals, findings, discussions. Vote: `+1` agree, `-1` disagree. |
+| `memory/{agent}.md` | What you need across sessions. What you wish you'd known. |
+| `reports/{agent}.md` | Verification logs, archived history. |
+
+Forum post format: `**Author:** name | **Timestamp:** YYYY-MM-DD HH:MM | **Votes:** +N/-M`
+
+## Guidelines
+
+- Read before acting — understand docs and forum before making changes
+- Be specific — file paths, line numbers, concrete details in posts
+- Don't modify `CLAUDE.md` unless explicitly asked by a human
 ```
 
 ## Why Each Step Matters
 
-- **Step 3 (timestamp)**: Without this, agents fabricate times. Forum posts become unorderable.
-- **Step 4 (ref docs)**: Agents shouldn't read everything — only what's relevant to their role.
-- **Step 5 (vote before posting)**: Forces agents to engage with existing work before adding noise.
-- **Step 10 (reflection)**: Feeds the self-improving context loop.
+- **Step 2 (timestamp)**: Without this, agents fabricate times. Forum posts become unorderable.
+- **Step 3 (ref docs)**: Agents shouldn't read everything — only what's relevant to their role.
+- **Step 4 (forum)**: Engaging with existing work before adding noise prevents redundant proposals.
+- **Step 8 (reflection)**: Feeds the self-improving context loop.
 
 ## When to Use
 
-All projects with 3+ agents. For 2-agent projects, the protocol can live in the forgemaster's role file instead of a standalone file.
+All projects with 3+ agents. For 2-agent projects, the protocol can live in the orchestrator's role file instead of a standalone file.
 
 ## When to Skip
 
-Solo-agent projects, or projects where the forgemaster file already covers the protocol adequately.
-
-## Adoption Status
-
-| Project | Has PROTOCOL.md | Has timestamps | Has ref doc routing | Has reflection step |
-|---------|----------------|----------------|--------------------|--------------------|
-
-<!-- Fill in during audits -->
+Solo-agent projects (use steward pattern instead), or projects using checkpoint-based coordination.

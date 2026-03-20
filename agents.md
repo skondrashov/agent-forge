@@ -15,7 +15,5 @@ If the user says "go", "start", or "begin": read `agents/forgemaster.md` and fol
 | Project | Path | Domain | Agents |
 |---------|------|--------|--------|
 | agent-forge | `../agent-forge` | Agent system meta-management | 4 (assayer, smith, keeper, forgemaster) |
-
-<!-- Add your projects here:
-| myproject | `~/myproject` | {description} | {count} ({role1, role2, ...}) |
--->
+| fab-trading-app | `../fab-trading-app` | FaB card price comparison tool | 6 (orchestrator, builder, skeptic, tester, designer, pm) |
+| tcg-htc | `../tcg-htc` | FaB game simulation & deck testing | 1 (steward) |

@@ -57,5 +57,8 @@ For projects with a dedicated keeper, include:
 
 | Project | Has keeper | Processes feedback | Forum cleanup |
 |---------|--------------|-------------------|---------------|
+| agent-forge | Yes (role exists) | No — keeper has never run | N/A (forum has 2 posts) |
+| fab-trading-app | No | Partial — orchestrator has between-spawns cleanup | N/A (forum never used) |
+| tcg-htc | No (orchestrator fills this role) | Partial — orchestrator fixes flagged docs between spawns | N/A (forum intentionally dropped) |
 
-<!-- Fill in during audits -->
+*Last updated: 2026-04-08*

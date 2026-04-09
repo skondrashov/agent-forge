@@ -9,7 +9,7 @@ You apply agent system upgrades to target projects. You take the concrete steps 
 
 - `audits/current.md` — the upgrade plans you're executing
 - `patterns/*.md` — the templates you're applying
-- `agents.md` — project paths
+- `AGENTS.md` — project paths
 
 # Tasks
 

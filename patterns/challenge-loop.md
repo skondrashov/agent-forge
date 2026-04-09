@@ -89,21 +89,51 @@ You set project direction and priorities based on current evidence.
 - Keep STRATEGY.md actionable: clear priorities with rationale
 ```
 
+## Variant: Mandatory Skeptic Gate
+
+The full skeptic/strategist pair described above is one implementation. A lighter but highly effective variant is the **mandatory skeptic gate**, where:
+
+1. **The builder cannot create PRs.** The builder implements and runs tests, then stops.
+2. **The orchestrator is the gate.** Only the orchestrator creates PRs, and only after the skeptic has approved.
+3. **The skeptic loops until clean.** The orchestrator runs the skeptic in a loop — if it finds critical issues, the builder fixes them, the skeptic re-reviews, and this repeats until the skeptic returns APPROVE.
+4. **Skeptic status is visible.** PR descriptions include the skeptic's verdict (e.g., "Skeptic: CLEAN after 2 rounds").
+
+This variant works well for projects where the orchestrator already handles strategic direction and a dedicated strategist would be overhead. The key insight is **enforcement mechanics**: the pattern is reliable because the builder physically cannot bypass the gate, not because someone remembers to run the review.
+
+**Evidence from tcg-htc:** PRs #76-83 shipped without skeptic review and contained 2 critical bugs. A retroactive audit caught them, and the team codified "Skeptic: N/A is never acceptable." The failure case proved the pattern's value — the mandatory gate was added precisely because the optional version failed.
+
+### Template addition for orchestrator.md (mandatory skeptic gate)
+
+```markdown
+## CRITICAL: Skeptic Gate is MANDATORY
+
+Every PR must be reviewed by the Skeptic before creation. There are NO exceptions.
+
+- Builder implements and runs tests, then stops. Builder must NOT create PRs.
+- Orchestrator spawns Skeptic to review all proposed changes.
+- If critical issues found: Builder fixes, Skeptic re-reviews. Loop until APPROVE.
+- Only the Orchestrator creates PRs, and only after Skeptic approval.
+- PR description includes skeptic status (e.g., "Skeptic: CLEAN after N rounds").
+```
+
 ## When to Use
 
-- Projects with 4+ agents where builders run multiple cycles between reviews
-- Projects where direction-setting and quality-checking are both needed
+- **Full skeptic/strategist pair:** Projects with 4+ agents where builders run multiple cycles between reviews, and where direction-setting and quality-checking are both needed.
+- **Mandatory skeptic gate (variant):** Any project where code correctness matters and the orchestrator can handle strategic direction. Especially valuable when the cost of bugs is high (e.g., game engines implementing complex rule systems).
 - Any project where you've noticed assumptions going unchecked
 
 ## When to Skip
 
 - Projects with 1-2 agents — the steward or orchestrator can self-review
-- Projects where a single skeptic (without a paired strategist) is sufficient — like pure code review in a build-test-fix loop
+- Projects where a single skeptic (without a paired strategist) is sufficient — like pure code review in a build-test-fix loop, but consider adding the mandatory gate enforcement even here
 - Projects where the checkpoint or iteration system already captures findings and redirects work (the loop can be implicit)
 
 ## Adoption Status
 
 | Project | Has skeptic | Has strategist | Loop sequenced | Forum-backed |
 |---------|-------------|----------------|----------------|--------------|
+| agent-forge | Partial (keeper challenges assayer) | No | Never actually run | No |
+| fab-trading-app | Yes | No | Informal sequencing | No (forum unused) |
+| tcg-htc | **Yes** — mandatory skeptic gate | No (orchestrator fills this role) | **Yes** — builder cannot create PRs, orchestrator loops skeptic until APPROVE | No (forum intentionally dropped; synchronous communication) |
 
-<!-- Fill in during audits -->
+*Last updated: 2026-04-08*

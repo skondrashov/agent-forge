@@ -54,6 +54,17 @@ Forum post format: `**Author:** name | **Timestamp:** YYYY-MM-DD HH:MM | **Votes
 
 All projects with 3+ agents. For 2-agent projects, the protocol can live in the orchestrator's role file instead of a standalone file.
 
+## Adoption Status
+
+| Project | Has PROTOCOL.md | Agents follow it | Domain adaptations |
+|---------|-----------------|-------------------|--------------------|
+| agent-forge | Yes | Partial — only assayer has demonstrably followed it | None beyond standard template |
+| fab-trading-app | Yes | Partial — agents have followed it (memory has content), but forum is unused | References learnings.md as domain knowledge |
+| tcg-htc | Yes | **Yes** — agents demonstrably follow it | Git hygiene, mandatory skeptic gate, memory policy, builder/skeptic handoff rules. Most evolved protocol in the ecosystem. |
+
+*Last updated: 2026-04-08*
+
 ## When to Skip
 
-Solo-agent projects (use steward pattern instead), or projects using checkpoint-based coordination.
+- Solo-agent projects (use steward pattern instead), or projects using checkpoint-based coordination.
+- **Forum may be unnecessary for synchronous workflows.** Projects where all inter-agent communication happens through orchestrator spawn prompts (sequential spawns, not concurrent) may not need FORUM.md. The orchestrator passes context directly between agents via spawn prompts and skeptic reviews. If a project tries the forum and agents don't use it, dropping it is a valid adaptation — document the decision in orchestrator memory so auditors know it was intentional, not an oversight. (Evidence: tcg-htc's 5-agent system works without a forum because the orchestrator coordinates all handoffs synchronously.)

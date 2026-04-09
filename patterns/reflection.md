@@ -80,5 +80,8 @@ Projects with 1-2 agents where the forgemaster can just fix things directly. The
 
 | Project | Forgemaster collects | Keeper processes | Loop complete |
 |---------|----------------------|--------------------|---------------|
+| agent-forge | Partial — forgemaster has reflection prompt, never used | No — keeper has never run | No |
+| fab-trading-app | Partial — orchestrator has 4-layer reflection prompt, agents have used it (memory content suggests shutdown was done) | No dedicated keeper | Partial |
+| tcg-htc | **Yes** — protocol includes shutdown reflection | Orchestrator fills keeper role | **Yes** — detailed session learnings in memory are evidence of it being followed |
 
-<!-- Fill in during audits -->
+*Last updated: 2026-04-08*

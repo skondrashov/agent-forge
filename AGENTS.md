@@ -8,14 +8,12 @@ If the user says "go", "start", or "begin": read `agents/forgemaster.md` and fol
 
 - `agents/` — Forge role files (forgemaster, assayer, smith, keeper)
 - `audits/current.md` — Latest cross-project gap analysis
-- `patterns/` — Reusable agent system patterns (steward, protocol, reflection, ref-docs, feedback)
+- `patterns/` — Reusable agent system patterns (steward, protocol, challenge-loop, reflection, ref-docs, feedback, security, first-run)
 
 ## Projects
 
 | Project | Path | Domain | Agents |
 |---------|------|--------|--------|
 | agent-forge | `../agent-forge` | Agent system meta-management | 4 (assayer, smith, keeper, forgemaster) |
-
-<!-- Add your projects here:
-| myproject | `~/myproject` | {description} | {count} ({role1, role2, ...}) |
--->
+| fab-trading-app | `../fab-trading-app` | FaB card price comparison tool | 6 (orchestrator, builder, skeptic, tester, designer, pm) |
+| tcg-htc | `../tcg-htc` | FaB game simulation & deck testing | 5 (orchestrator, builder, skeptic, test-generator, playtester) |

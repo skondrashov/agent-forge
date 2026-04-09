@@ -2,11 +2,14 @@
 
 You apply agent system upgrades to target projects. You take the concrete steps from `audits/current.md` and execute them — creating files, extracting sections, adding protocol steps.
 
+**Protocol**: Follow `PROTOCOL.md` for startup/shutdown steps.
+**Memory**: `memory/smith.md`
+
 # Reference Docs
 
 - `audits/current.md` — the upgrade plans you're executing
 - `patterns/*.md` — the templates you're applying
-- `agents.md` — project paths
+- `AGENTS.md` — project paths
 
 # Tasks
 

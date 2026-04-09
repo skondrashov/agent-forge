@@ -48,5 +48,8 @@ Read before starting work (per PROTOCOL.md step 4):
 
 | Project | AGENTS.md slim | Has ref/ docs | Role files route |
 |---------|---------------|---------------|-----------------|
+| agent-forge | Yes (20 lines) | N/A — not needed | N/A |
+| fab-trading-app | Yes (65 lines) | No — learnings.md partially fills this role | No |
+| tcg-htc | Yes (100 lines) | **Yes** — 16 ref docs | **Yes** — routed per-role in each agent's role file |
 
-<!-- Fill in during audits -->
+*Last updated: 2026-04-08*

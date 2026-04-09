@@ -144,5 +144,8 @@ Growth roles: deployer (push/deploy), watcher (monitoring/alerts), economist (co
 
 | Project | Has steward | Memory active | Split proposed |
 |---------|-------------|---------------|----------------|
+| agent-forge | N/A | N/A | N/A |
+| fab-trading-app | N/A | N/A | N/A |
+| tcg-htc | N/A (outgrown) | N/A | Started as steward, now 5 agents (orchestrator, builder, skeptic, test-generator, playtester) |
 
-<!-- Fill in during audits -->
+*Last updated: 2026-04-08*

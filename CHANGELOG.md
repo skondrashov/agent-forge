@@ -7,6 +7,21 @@ This project uses 0.x versioning.
 
 ## [Unreleased]
 
+### Changed
+
+- **2026-04-25** — Standardized role names: forgemaster→orchestrator, smith→builder, keeper→librarian, assayer→auditor.
+
+### Added
+
+- **Checkpoint-as-Protocol pattern** — single checkpoint file replaces PROTOCOL.md + FORUM.md for iterative build-test-fix workflows. Validated by 3 production projects.
+- **External Validation pattern** — validate outputs against real-world data instead of self-generated tests. Prevents circular self-benchmarking. Validated by a forge that caught bugs in 6/39 projects this way.
+- **Playbook pattern** — curated shared knowledge base for experiential domains. Agents read verified mechanics, strategies, and mistakes. Validated by 2 production projects that independently converged on this structure.
+- **Librarian pattern** — proactive doc-maintenance agent for projects with accumulating knowledge artifacts. Maintains playbook, memory, docs, and agent files. Catches dead code and stale references.
+- **Agent restructuring guidance** — steward pattern now includes "When to Shrink": signs of over-provisioning, how to consolidate roles, preserving knowledge during pruning. Validated by a production project that independently restructured from 9 to 5 agents.
+- **Coordination style selection** — first-run wizard now asks about coordination style (protocol+forum, checkpoint, or neither) as a separate decision from team size. Playbook mentioned as an orthogonal option for experiential domains.
+- **Assayer enhancements** — scans now check for playbook directories, checkpoint files, and librarian roles. Maturity assessment explicitly acknowledges checkpoint as equivalent to protocol.
+- **Smith enhancements** — new operations: bootstrap librarian, create playbook, set up checkpoint, restructure agents.
+
 ## [0.4] - 2026-03-15
 
 ### Added

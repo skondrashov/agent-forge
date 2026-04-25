@@ -14,9 +14,9 @@ A template agent system manager that audits and upgrades multi-agent systems acr
 
 You register your projects. The forge scans them against a pattern library, identifies gaps, and propagates best practices — one project at a time.
 
-On first run, the forgemaster walks you through setup — asks what projects you have, scans their existing agent systems, registers them, and runs the first audit. On return visits, it picks up where it left off.
+On first run, the orchestrator walks you through setup — asks what projects you have, scans their existing agent systems, registers them, and runs the first audit. On return visits, it picks up where it left off.
 
-The forgemaster runs a loop:
+The orchestrator runs a loop:
 
 1. **Audit** — scans every registered project's agent system
 2. **Review** — compares against the pattern library, ranks by priority
@@ -26,13 +26,13 @@ The forgemaster runs a loop:
 
 ## Upgrading
 
-The forge upgrades itself. When the forgemaster starts a returning session, it checks upstream for newer tags. If one exists, it diffs only `patterns/` and `agents/` — your project registry, audits, and any local changes are left alone. It shows you what's new and asks before applying.
+The forge upgrades itself. When the orchestrator starts a returning session, it checks upstream for newer tags. If one exists, it diffs only `patterns/` and `agents/` — your project registry, audits, and any local changes are left alone. It shows you what's new and asks before applying.
 
-**Version scheme**: Upstream tags use 0.x versioning (`v0.1`, `v0.2`, ...). The forgemaster checks for newer tags on the upstream remote at session start. If you fork the template, set your own origin and tag scheme so your fork's versions don't collide with upstream. See [CHANGELOG.md](CHANGELOG.md) for release history.
+**Version scheme**: Upstream tags use 0.x versioning (`v0.1`, `v0.2`, ...). The orchestrator checks for newer tags on the upstream remote at session start. If you fork the template, set your own origin and tag scheme so your fork's versions don't collide with upstream. See [CHANGELOG.md](CHANGELOG.md) for release history.
 
 ## What It Looks For
 
-The forge audits for seven patterns:
+The forge audits for eleven patterns:
 
 | Pattern | What it is |
 |---------|-----------|
@@ -40,9 +40,13 @@ The forge audits for seven patterns:
 | **Startup Protocol** | Standalone `PROTOCOL.md` with timestamps, forum voting, ref doc routing |
 | **Shutdown Reflection** | Agents evaluate their context at session end; feedback fixes the docs |
 | **Reference Doc Splitting** | Slim `AGENTS.md` + role-specific `ref/*.md` files to reduce context bloat |
-| **Keeper Feedback Loop** | A doc-maintenance agent (or forgemaster task) that processes reflection feedback |
+| **Librarian Feedback Loop** | A doc-maintenance agent (or orchestrator task) that processes reflection feedback |
 | **Challenge Loop** | Paired skeptic/strategist roles that enforce evidence-based review before strategy decisions |
 | **First-Run Wizard** | Conversational bootstrap that scans existing projects or designs new agent systems from a 5-tier hierarchy |
+| **Checkpoint-as-Protocol** | Single checkpoint file replaces protocol + forum for iterative build-test-fix workflows |
+| **External Validation** | Validate outputs against real-world data, not self-generated tests — prevents circular self-benchmarking |
+| **Playbook** | Curated shared knowledge base for experiential domains — verified mechanics, strategies, and mistakes |
+| **Librarian** | Proactive doc-maintenance agent that keeps playbook, memory, agent files, and code references accurate |
 
 Each pattern has a template in `patterns/` with problem statement, solution, and when-to-use guidance.
 
@@ -51,10 +55,10 @@ Each pattern has a template in `patterns/` with problem statement, solution, and
 ```
 agents.md              # Your project registry
 agents/
-  forgemaster.md       # Runs the audit-propagate loop
-  assayer.md           # Scans projects against patterns
-  smith.md             # Applies upgrades to target projects
-  keeper.md            # Maintains patterns, challenges self-audit
+  orchestrator.md      # Runs the audit-propagate loop
+  auditor.md           # Scans projects against patterns
+  builder.md           # Applies upgrades to target projects
+  librarian.md         # Maintains patterns, challenges self-audit
 audits/
   current.md           # Latest gap analysis (overwritten each cycle)
 patterns/
@@ -65,15 +69,19 @@ patterns/
   feedback.md          # Keeper feedback loop pattern + template
   challenge-loop.md    # Skeptic/strategist review cycle pattern
   first-run.md         # Bootstrap wizard for new projects
+  checkpoint.md        # Checkpoint-as-protocol variant
+  external-validation.md # External validation for generated projects
+  playbook.md          # Shared knowledge base for experiential domains
+  librarian.md         # Proactive doc-maintenance pattern
 ```
 
 ## How Projects Get Upgraded
 
-The smith adapts patterns to each project's domain and conventions. It doesn't paste templates blindly — it reads the existing system first, preserves project identity, and only adds what's missing. A 3-agent project won't get a keeper it doesn't need. A 50-line AGENTS.md won't get ref doc splitting.
+The builder adapts patterns to each project's domain and conventions. It doesn't paste templates blindly — it reads the existing system first, preserves project identity, and only adds what's missing. A 3-agent project won't get a librarian it doesn't need. A 50-line AGENTS.md won't get ref doc splitting.
 
 ## Adding New Patterns
 
-If the assayer notices a project doing something well that isn't in the library, it flags it. The keeper creates the pattern file:
+If the auditor notices a project doing something well that isn't in the library, it flags it. The librarian creates the pattern file:
 
 ```markdown
 # Pattern: {Name}

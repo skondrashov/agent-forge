@@ -1,4 +1,4 @@
-# Pattern: Keeper Feedback Loop
+# Pattern: Librarian Feedback Loop
 
 ## Problem
 
@@ -14,15 +14,15 @@ In practice, forums grow fast. One project's forum went from 51 to 621 lines in 
 
 ## Solution
 
-A keeper agent (or doc-maintenance role by any name) that:
+A librarian agent (or doc-maintenance role by any name) that:
 1. Cleans the forum — archives resolved threads, merges duplicates
 2. Maintains memory files — removes stale info, consolidates duplicates
 3. Keeps docs current — cross-references claims against code
 4. Processes context feedback — applies agent shutdown reflections to the right files
 
-## Minimum Viable Keeper
+## Minimum Viable Librarian
 
-Even projects without a dedicated keeper agent can get 80% of the value by adding these tasks to the forgemaster:
+Even projects without a dedicated librarian agent can get 80% of the value by adding these tasks to the orchestrator:
 
 ```markdown
 ## Between Agent Spawns
@@ -33,9 +33,9 @@ After reading an agent's output and before spawning the next:
 3. If memory files were mentioned as stale → check and update
 ```
 
-## Full Keeper Template
+## Full Librarian Template
 
-For projects with a dedicated keeper, include:
+For projects with a dedicated librarian, include:
 - Forum cleaning (archive resolved threads, remove excessive downvotes)
 - Memory maintenance (remove stale info, consolidate)
 - Doc currency checks (cross-reference AGENTS.md against code)
@@ -50,12 +50,16 @@ For projects with a dedicated keeper, include:
 
 ## When to Skip
 
-- Projects with 2-3 agents (forgemaster can self-maintain)
+- Projects with 2-3 agents (orchestrator can self-maintain)
 - Projects with short, focused agent sessions (not enough drift to matter)
 
 ## Adoption Status
 
-| Project | Has keeper | Processes feedback | Forum cleanup |
+| Project | Has librarian | Processes feedback | Forum cleanup |
 |---------|--------------|-------------------|---------------|
 
 <!-- Fill in during audits -->
+
+## See Also
+
+For projects that need proactive doc maintenance without a forum, see `patterns/librarian.md`. The proactive librarian pattern covers playbook maintenance, dead code cleanup, and claim verification — tasks that go beyond the reactive feedback processing described here.

@@ -1,6 +1,6 @@
 # First-Run Wizard
 
-You are the forgemaster running the first-run setup. AGENTS.md has no projects registered yet (only the agent-forge self-entry). Walk the user through setup using the guide below.
+You are the orchestrator running the first-run setup. AGENTS.md has no projects registered yet (only the agent-forge self-entry). Walk the user through setup using the guide below.
 
 ## Conversational Style
 
@@ -65,9 +65,9 @@ Adds `PROTOCOL.md` for structured startup/shutdown. Template: `patterns/protocol
 For: projects where unchecked assumptions are risky, or where quality review and strategic direction are both needed.
 Adds skeptic + strategist roles. Template: `patterns/challenge-loop.md`
 
-**Tier 5 — Full team (5+ agents) + keeper**
+**Tier 5 — Full team (5+ agents) + librarian**
 For: projects with enough agent communication that docs and forums need active maintenance.
-Adds a keeper/librarian role. Template: `patterns/feedback.md`
+Adds a librarian role. Template: `patterns/feedback.md`
 
 **Choosing the right tier:**
 - When in doubt, start lower. A steward that grows is better than a 5-agent system with nothing to do.
@@ -81,6 +81,21 @@ It's fine to say so. Some projects don't map cleanly to these hierarchies — un
 3. **Start with a steward** — safe default. The steward knows the growth path and can propose a split once the project's actual needs become clear
 
 Let the user choose. Don't pretend confidence you don't have.
+
+### Choose a coordination style
+
+After selecting a tier, decide how agents coordinate. This is a separate decision from team size:
+
+**Protocol + Forum** — Agents follow a structured startup sequence (`PROTOCOL.md`) and communicate through a forum (`FORUM.md`) with voting. Best for: teams that need deliberation, multi-agent decision-making, or audit trails. Typically tiers 3-5.
+Templates: `patterns/protocol.md` + `patterns/feedback.md`
+
+**Checkpoint** — A single checkpoint file tracks current state, blockers, and decisions. Agents read it at startup and update at shutdown. Best for: iterative build-test-fix loops, sequential agent work, any project where "what happened last" matters more than "what does the team think." Works at any tier 2+.
+Template: `patterns/checkpoint.md`
+
+**Neither** — The orchestrator makes decisions and agents use memory files to persist learnings. No formal coordination mechanism. Best for: small teams (tiers 1-2) where the orchestrator's judgment + per-agent memory is sufficient.
+
+**Playbook** (orthogonal) — If the project has an experiential domain — game mechanics, deployment procedures, research protocols, trading strategies — add a shared knowledge base regardless of coordination style.
+Template: `patterns/playbook.md`
 
 ### Present the hierarchy
 
@@ -105,8 +120,10 @@ CLAUDE.md                → "See AGENTS.md."
 AGENTS.md                → Project docs, key files, architecture
 agents/{role}.md         → Role file for each agent
 memory/{role}.md         → Persistent memory for each agent
-{PROTOCOL.md}            → (if tier 3+) Startup procedure
-{FORUM.md}               → (if tier 2+) Agent coordination
+{PROTOCOL.md}            → (if protocol+forum) Startup procedure
+{FORUM.md}               → (if protocol+forum) Agent coordination
+{.claude/checkpoint.md}  → (if checkpoint) Session state tracking
+{playbook/}              → (if experiential domain) Shared knowledge base
 ```
 
 ### Growth path
@@ -137,7 +154,7 @@ Update `AGENTS.md`'s project table with every project added, including agent cou
 
 ### Run the first audit
 
-Scan all registered projects against `patterns/*.md`. Write results to `audits/current.md` following `agents/assayer.md`.
+Scan all registered projects against `patterns/*.md`. Write results to `audits/current.md` following `agents/auditor.md`.
 
 ### Present findings
 

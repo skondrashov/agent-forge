@@ -64,9 +64,26 @@ When you judge it's time, propose a split. Create the new role files in `agents/
 1. **2-3 agents** — create role files, start a shared `FORUM.md` for coordination
 2. **3+ agents** — add `PROTOCOL.md` (startup procedure: read role file → get timestamp → check forum → vote on 2 posts → do work → update memory → shutdown reflection)
 3. **Heavy AGENTS.md** — split domain-specific content into `ref/*.md`, route per-role
-4. **Docs drifting** — add a librarian/keeper role to maintain docs and clean the forum
+4. **Docs drifting** — add a librarian role to maintain docs and clean the forum
 
 Until then, keep it simple.
+
+# When to Shrink
+
+As the project matures, you may discover the agent system is over-provisioned. Signs it's time to consolidate:
+
+- **Agents that never activate.** If a role hasn't been used in 3+ cycles, it's aspirational, not operational.
+- **Roles describing the wrong architecture.** If the project pivoted but role files still describe the old approach, those roles are misleading, not helpful.
+- **Overlapping purposes.** Two roles that cover the same ground should merge into one.
+- **Roles created for planned features.** If the feature never materialized, the role is dead weight.
+
+Shrinking is healthy — it means the project learned what it actually needs. How to consolidate:
+
+1. Identify which roles are actually operating (used in the last 3 cycles)
+2. Merge overlapping roles — combine their task lists, keep the better-written one
+3. Delete unused role files from `agents/`
+4. Update AGENTS.md to reflect the actual agent count
+5. Preserve any useful knowledge from deleted roles in `memory/` or the playbook
 
 # Reference Docs
 

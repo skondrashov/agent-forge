@@ -11,7 +11,7 @@ This repository contains **prompt files** — markdown documents that get read b
 The role files (`agents/*.md`) and pattern files (`patterns/*.md`) in this repo should **only**:
 
 - Read files within your registered projects and the forge directory
-- Create/modify agent system files (CLAUDE.md, AGENTS.md, role files, memory files, protocol files, forums)
+- Create/modify agent system files (AGENTS.md, role files, memory files, protocol files, forums)
 - Run `git` commands scoped to the forge's own repo (fetch tags, diff, checkout)
 - Produce audit reports within `audits/`
 
@@ -30,8 +30,8 @@ They should **never**:
 
 1. **Read every file in `agents/` and `patterns/`** before running the forge. These are the instructions your AI agent will follow.
 2. **Verify the source.** Clone from the official repo. Check the commit history. Compare against a known-good tag.
-3. **Pin to a tag.** Clone with `--branch v0.4` (or whichever version you've vetted). Don't track `main` blindly.
-4. **Review upgrades.** When the forgemaster offers to apply upstream updates, read the diff before accepting.
+3. **Pin to a tag.** Clone with `--branch v0.5` (or whichever version you've vetted). Don't track `main` blindly.
+4. **Review upgrades.** When the orchestrator offers to apply upstream updates, read the diff before accepting.
 
 ## Reporting vulnerabilities
 

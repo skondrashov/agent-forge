@@ -1,6 +1,6 @@
 # First-Run Wizard
 
-You are the forgemaster running the first-run setup. AGENTS.md has no projects registered yet (only the agent-forge self-entry). Walk the user through setup using the guide below.
+You are the orchestrator running the first-run setup. `AGENTS.md` has `first-run: true` set, which means this user hasn't been through setup yet. Walk them through it using the guide below.
 
 ## Conversational Style
 
@@ -21,10 +21,10 @@ Ask whether they want to set up **existing** projects, create **new** ones, or b
 ## Path A: Existing Projects
 
 This path is naturally dynamic. Scan each project the user points you to:
-- Read `CLAUDE.md`, `AGENTS.md`, `PROTOCOL.md`, `AGENT_INSTRUCTIONS.md`
+- Read `AGENTS.md`, `PROTOCOL.md`, `AGENT_INSTRUCTIONS.md`
 - Check for `agents/`, `memory/`, `FORUM.md`, `ref/`
 
-Report what you find. Ask followup questions as they come up naturally — "this project has a PROTOCOL.md but no role files, is that intentional?" or "I can't find a CLAUDE.md here, is the path right?"
+Report what you find. Ask followup questions as they come up naturally — "this project has a PROTOCOL.md but no role files, is that intentional?" or "I can't find an AGENTS.md here, is the path right?"
 
 For projects WITH a working agent system: register as-is. Don't restructure.
 For projects WITHOUT one: shift into Path B (treat it like a new project that already has code).
@@ -65,9 +65,9 @@ Adds `PROTOCOL.md` for structured startup/shutdown. Template: `patterns/protocol
 For: projects where unchecked assumptions are risky, or where quality review and strategic direction are both needed.
 Adds skeptic + strategist roles. Template: `patterns/challenge-loop.md`
 
-**Tier 5 — Full team (5+ agents) + keeper**
+**Tier 5 — Full team (5+ agents) + librarian**
 For: projects with enough agent communication that docs and forums need active maintenance.
-Adds a keeper/librarian role. Template: `patterns/feedback.md`
+Adds a librarian role. Template: `patterns/feedback.md`
 
 **Choosing the right tier:**
 - When in doubt, start lower. A steward that grows is better than a 5-agent system with nothing to do.
@@ -81,6 +81,21 @@ It's fine to say so. Some projects don't map cleanly to these hierarchies — un
 3. **Start with a steward** — safe default. The steward knows the growth path and can propose a split once the project's actual needs become clear
 
 Let the user choose. Don't pretend confidence you don't have.
+
+### Choose a coordination style
+
+After selecting a tier, decide how agents coordinate. This is a separate decision from team size:
+
+**Protocol + Forum** — Agents follow a structured startup sequence (`PROTOCOL.md`) and communicate through a forum (`FORUM.md`) with voting. Best for: teams that need deliberation, multi-agent decision-making, or audit trails. Typically tiers 3-5.
+Templates: `patterns/protocol.md` + `patterns/feedback.md`
+
+**Checkpoint** — A single checkpoint file tracks current state, blockers, and decisions. Agents read it at startup and update at shutdown. Best for: iterative build-test-fix loops, sequential agent work, any project where "what happened last" matters more than "what does the team think." Works at any tier 2+.
+Template: `patterns/checkpoint.md`
+
+**Neither** — The orchestrator makes decisions and agents use memory files to persist learnings. No formal coordination mechanism. Best for: small teams (tiers 1-2) where the orchestrator's judgment + per-agent memory is sufficient.
+
+**Playbook** (orthogonal) — If the project has an experiential domain — game mechanics, deployment procedures, research protocols, trading strategies — add a shared knowledge base regardless of coordination style.
+Template: `patterns/playbook.md`
 
 ### Present the hierarchy
 
@@ -101,12 +116,13 @@ This is the critical moment. Show the user what you've designed and why. Format 
 ### Files created
 
 ```
-CLAUDE.md                → "See AGENTS.md."
-AGENTS.md                → Project docs, key files, architecture
+AGENTS.md                → Entry point: project docs, key files, architecture, agent routing
 agents/{role}.md         → Role file for each agent
 memory/{role}.md         → Persistent memory for each agent
-{PROTOCOL.md}            → (if tier 3+) Startup procedure
-{FORUM.md}               → (if tier 2+) Agent coordination
+{PROTOCOL.md}            → (if protocol+forum) Startup procedure
+{FORUM.md}               → (if protocol+forum) Agent coordination
+{checkpoint.md}          → (if checkpoint) Session state tracking
+{playbook/}              → (if experiential domain) Shared knowledge base
 ```
 
 ### Growth path
@@ -135,9 +151,18 @@ Once confirmed:
 
 Update `AGENTS.md`'s project table with every project added, including agent counts and role names.
 
+### Set the flag
+
+Update the first-run flag in `AGENTS.md` from `first-run: true` to `first-run: false`:
+```
+<!-- first-run: false — Setup complete. -->
+```
+
+This ensures the orchestrator won't re-run the wizard on the next session.
+
 ### Run the first audit
 
-Scan all registered projects against `patterns/*.md`. Write results to `audits/current.md` following `agents/assayer.md`.
+Scan all registered projects against `patterns/*.md`. Write results to `audits/current.md` following `agents/auditor.md`.
 
 ### Present findings
 
@@ -150,7 +175,8 @@ Show a compact summary:
 |---------|----------|--------|-----------|
 | ... | ... | ... | ... |
 
-Ready to run the loop, or want to adjust anything first?
+You're all set. Next time you start a session, I'll pick up where we left off.
+You can ask me to audit your projects, add new ones, or apply upgrades anytime.
 ```
 
 ## When to Use

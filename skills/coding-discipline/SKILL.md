@@ -1,6 +1,6 @@
 ---
 name: coding-discipline
-description: Code quality defaults extracted from Claude Code's system prompt. Builder agents that touch app code should reference this skill so they don't lose CC's editing/communication discipline when their system prompt is replaced with a custom role file.
+description: Code quality defaults for builder agents. Ensures agents that touch app code maintain good editing, scoping, and communication discipline regardless of which harness they run in.
 ---
 
 # Coding Discipline
@@ -9,15 +9,15 @@ You are writing or modifying code. Apply these defaults regardless of what the p
 
 ## File operations
 
-Use the dedicated tools, not Bash text-munging:
+Use your harness's dedicated file tools instead of shell text-munging:
 
-- **Search file contents** — Grep (not `grep`/`rg`/`Select-String`)
-- **Find files by name/pattern** — Glob (not `find`/`ls -R`/`Get-ChildItem -Recurse`)
-- **Read files** — Read (not `cat`/`head`/`tail`/`Get-Content`)
-- **Edit existing files** — Edit (not `sed`/`awk`/in-place rewrites). Read the file at least once first.
-- **Create or fully rewrite a file** — Write (not `echo >`/`cat <<EOF`/`Out-File`)
+- **Search file contents** — use the built-in search/grep tool, not shell `grep`/`rg`/`Select-String`
+- **Find files by name/pattern** — use the built-in glob/find tool, not shell `find`/`ls -R`
+- **Read files** — use the built-in read tool, not `cat`/`head`/`tail`
+- **Edit existing files** — use the built-in edit tool, not `sed`/`awk`/in-place rewrites. Read the file at least once first.
+- **Create or fully rewrite a file** — use the built-in write tool, not `echo >`/`cat <<EOF`
 
-Bash/PowerShell stays for actual shell work: running build commands, git, package managers, tests.
+Shell stays for actual shell work: running build commands, git, package managers, tests.
 
 ## Comments
 
@@ -58,4 +58,4 @@ Don't introduce a new dependency, framework, or pattern without a stated reason.
 
 ## Communication
 
-Don't narrate the skill or your process. Don't say "I'll use the Edit tool" or "Following the coding-discipline skill, I'll..." Just do the work and report what changed in normal terms. The user doesn't need to see the meta layer.
+Don't narrate the skill or your process. Don't say "I'll use the edit tool" or "Following the coding-discipline skill, I'll..." Just do the work and report what changed in normal terms. The user doesn't need to see the meta layer.

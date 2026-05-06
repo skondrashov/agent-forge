@@ -15,14 +15,13 @@ The value isn't "start with one agent" (obvious). The value is that the steward 
 - The growth path: when to add roles, PROTOCOL.md, FORUM.md, ref docs
 - The file conventions that make the project auditable by the forge
 
-This makes the project **self-sufficient from day one**. No special command needed — the user opens the project in their AI coding agent, starts working, and the agent naturally knows the playbook because CLAUDE.md → AGENTS.md → agents/steward.md teaches it.
+This makes the project **self-sufficient from day one**. No special command needed — the user opens the project in their AI coding agent, starts working, and the agent naturally knows the playbook because AGENTS.md → agents/steward.md teaches it.
 
 ## Template
 
 ### File structure
 ```
-CLAUDE.md              # "See AGENTS.md."
-AGENTS.md              # Project docs (stack, commands, key files)
+AGENTS.md              # Entry point: project docs, stack, commands, key files, agent routing
 agents/
   steward.md           # The bootstrap prompt
 memory/

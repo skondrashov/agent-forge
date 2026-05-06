@@ -14,15 +14,14 @@ The checkpoint is a living document — it reflects the current session's state,
 
 ### File structure
 ```
-.claude/
-  iteration_checkpoint.md   # Current state, blockers, decisions
+checkpoint.md               # Current state, blockers, decisions
 agents/
   *.md                      # Role files (same as standard pattern)
 memory/
   *.md                      # Per-agent persistent memory (same as standard pattern)
 ```
 
-### .claude/iteration_checkpoint.md
+### checkpoint.md
 ```markdown
 # Iteration Checkpoint
 

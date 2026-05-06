@@ -7,25 +7,24 @@ You treat agent-forge the same as any other project. If agent-forge's own patter
 # Reference Docs
 
 - `patterns/*.md` — the patterns you're auditing against
-- `agents.md` — the project registry (paths, domains, agent counts)
+- `AGENTS.md` — the project registry (paths, domains, agent counts)
 - `audits/current.md` — the previous audit (compare to find regressions or progress)
 
 # Tasks
 
 ## 1. Scan Each Project
 
-For every project in `agents.md` (including agent-forge), read:
+For every project in `AGENTS.md` (including agent-forge), read:
 
-1. `CLAUDE.md` — is it slim or bloated?
+1. `AGENTS.md` — is it slim or bloated? Does it serve as a clean entry point?
 2. `PROTOCOL.md` or `AGENT_INSTRUCTIONS.md` — does it exist? Does it have timestamps, reflection, voting minimums?
-3. `AGENTS.md` — is it separate from CLAUDE.md? Is it slim or overloaded?
-4. `agents/*.md` — do role files exist? Are they well-structured? Do they route to ref docs?
-5. `ref/*.md` — do reference docs exist? Are they routed per-role?
-6. `FORUM.md` — does the project use a forum?
-7. `memory/` — does the project use agent memory files?
-8. `playbook/` — does the project use a shared knowledge base? Is it maintained?
-9. `.claude/checkpoint.md` or `.claude/iteration_checkpoint.md` — does the project use checkpoint-based coordination?
-10. Librarian role — does the project have a dedicated doc-maintenance agent (may be called librarian, keeper, or similar)?
+3. `agents/*.md` — do role files exist? Are they well-structured? Do they route to ref docs?
+4. `ref/*.md` — do reference docs exist? Are they routed per-role?
+5. `FORUM.md` — does the project use a forum?
+6. `memory/` — does the project use agent memory files?
+7. `playbook/` — does the project use a shared knowledge base? Is it maintained?
+8. Checkpoint file (e.g. `checkpoint.md`, `.claude/checkpoint.md`) — does the project use checkpoint-based coordination?
+9. Librarian role — does the project have a dedicated doc-maintenance agent (may be called librarian, keeper, or similar)?
 
 Note: some projects use `AGENT_INSTRUCTIONS.md` instead of `PROTOCOL.md`. That's fine — check for equivalent functionality, not exact file names.
 
@@ -44,8 +43,8 @@ Apply the same scrutiny to agent-forge itself:
 
 - Are the patterns in `patterns/*.md` actually good? Do they reflect what's working in practice?
 - Are the role files in `agents/` accurate and useful?
-- Is the registry in `agents.md` current?
-- Is CLAUDE.md still slim?
+- Is the registry in `AGENTS.md` current?
+- Is AGENTS.md still slim and well-organized as an entry point?
 - Does agent-forge practice what it preaches?
 
 Be honest. The librarian will push back if you go easy on agent-forge.
@@ -54,10 +53,10 @@ Be honest. The librarian will push back if you go easy on agent-forge.
 
 Rank projects:
 
-1. **Full** — all applicable patterns adopted, self-improving loop operational
+1. **Full** — all applicable patterns adopted, docs self-maintained
 2. **Structured** — has protocol and separate AGENTS.md, missing reflection/feedback
 3. **Minimal** — intentionally lightweight: single orchestrator agent with memory, no protocol/forum (see `patterns/steward.md`). This is a valid end state for small projects, not just a waypoint.
-4. **Embedded** — agent system lives inside CLAUDE.md, no protocol file
+4. **Embedded** — agent system is inlined in a single file with no separation, no protocol file
 5. **None** — no agent system
 
 **Important:** Maturity levels measure pattern adoption, not effectiveness. A project using checkpoints instead of protocol + forum isn't missing anything — checkpoint is an equivalent coordination mechanism for iterative workflows. A project with a playbook instead of ref docs may be better served than one with ref docs it doesn't need. When writing upgrade plans, ask "would this pattern actually help this project?" — not just "is this pattern missing?"

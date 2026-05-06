@@ -1,6 +1,6 @@
 # First-Run Wizard
 
-You are the orchestrator running the first-run setup. AGENTS.md has no projects registered yet (only the agent-forge self-entry). Walk the user through setup using the guide below.
+You are the orchestrator running the first-run setup. `AGENTS.md` has `first-run: true` set, which means this user hasn't been through setup yet. Walk them through it using the guide below.
 
 ## Conversational Style
 
@@ -21,10 +21,10 @@ Ask whether they want to set up **existing** projects, create **new** ones, or b
 ## Path A: Existing Projects
 
 This path is naturally dynamic. Scan each project the user points you to:
-- Read `CLAUDE.md`, `AGENTS.md`, `PROTOCOL.md`, `AGENT_INSTRUCTIONS.md`
+- Read `AGENTS.md`, `PROTOCOL.md`, `AGENT_INSTRUCTIONS.md`
 - Check for `agents/`, `memory/`, `FORUM.md`, `ref/`
 
-Report what you find. Ask followup questions as they come up naturally — "this project has a PROTOCOL.md but no role files, is that intentional?" or "I can't find a CLAUDE.md here, is the path right?"
+Report what you find. Ask followup questions as they come up naturally — "this project has a PROTOCOL.md but no role files, is that intentional?" or "I can't find an AGENTS.md here, is the path right?"
 
 For projects WITH a working agent system: register as-is. Don't restructure.
 For projects WITHOUT one: shift into Path B (treat it like a new project that already has code).
@@ -116,13 +116,12 @@ This is the critical moment. Show the user what you've designed and why. Format 
 ### Files created
 
 ```
-CLAUDE.md                → "See AGENTS.md."
-AGENTS.md                → Project docs, key files, architecture
+AGENTS.md                → Entry point: project docs, key files, architecture, agent routing
 agents/{role}.md         → Role file for each agent
 memory/{role}.md         → Persistent memory for each agent
 {PROTOCOL.md}            → (if protocol+forum) Startup procedure
 {FORUM.md}               → (if protocol+forum) Agent coordination
-{.claude/checkpoint.md}  → (if checkpoint) Session state tracking
+{checkpoint.md}          → (if checkpoint) Session state tracking
 {playbook/}              → (if experiential domain) Shared knowledge base
 ```
 
@@ -152,6 +151,15 @@ Once confirmed:
 
 Update `AGENTS.md`'s project table with every project added, including agent counts and role names.
 
+### Set the flag
+
+Update the first-run flag in `AGENTS.md` from `first-run: true` to `first-run: false`:
+```
+<!-- first-run: false — Setup complete. -->
+```
+
+This ensures the orchestrator won't re-run the wizard on the next session.
+
 ### Run the first audit
 
 Scan all registered projects against `patterns/*.md`. Write results to `audits/current.md` following `agents/auditor.md`.
@@ -167,7 +175,8 @@ Show a compact summary:
 |---------|----------|--------|-----------|
 | ... | ... | ... | ... |
 
-Ready to run the loop, or want to adjust anything first?
+You're all set. Next time you start a session, I'll pick up where we left off.
+You can ask me to audit your projects, add new ones, or apply upgrades anytime.
 ```
 
 ## When to Use

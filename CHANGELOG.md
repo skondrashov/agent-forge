@@ -7,20 +7,32 @@ This project uses 0.x versioning.
 
 ## [Unreleased]
 
-### Changed
-
-- **2026-04-25** — Standardized role names: forgemaster→orchestrator, smith→builder, keeper→librarian, assayer→auditor.
+## [0.5] - 2026-05-06
 
 ### Added
 
 - **Checkpoint-as-Protocol pattern** — single checkpoint file replaces PROTOCOL.md + FORUM.md for iterative build-test-fix workflows. Validated by 3 production projects.
-- **External Validation pattern** — validate outputs against real-world data instead of self-generated tests. Prevents circular self-benchmarking. Validated by a forge that caught bugs in 6/39 projects this way.
-- **Playbook pattern** — curated shared knowledge base for experiential domains. Agents read verified mechanics, strategies, and mistakes. Validated by 2 production projects that independently converged on this structure.
-- **Librarian pattern** — proactive doc-maintenance agent for projects with accumulating knowledge artifacts. Maintains playbook, memory, docs, and agent files. Catches dead code and stale references.
-- **Agent restructuring guidance** — steward pattern now includes "When to Shrink": signs of over-provisioning, how to consolidate roles, preserving knowledge during pruning. Validated by a production project that independently restructured from 9 to 5 agents.
-- **Coordination style selection** — first-run wizard now asks about coordination style (protocol+forum, checkpoint, or neither) as a separate decision from team size. Playbook mentioned as an orthogonal option for experiential domains.
-- **Assayer enhancements** — scans now check for playbook directories, checkpoint files, and librarian roles. Maturity assessment explicitly acknowledges checkpoint as equivalent to protocol.
-- **Smith enhancements** — new operations: bootstrap librarian, create playbook, set up checkpoint, restructure agents.
+- **External Validation pattern** — validate outputs against real-world data instead of self-generated tests. Prevents circular self-benchmarking.
+- **Playbook pattern** — curated shared knowledge base for experiential domains. Verified mechanics, strategies, and mistakes.
+- **Librarian pattern** — proactive doc-maintenance agent for projects with accumulating knowledge artifacts.
+- **Coding-discipline skill** — code quality defaults for builder agents, harness-agnostic.
+- **First-run flag** — `AGENTS.md` ships with `first-run: true`; orchestrator sets it to false after the setup wizard completes.
+- **Agent restructuring guidance** — steward pattern now includes "When to Shrink": signs of over-provisioning, how to consolidate roles.
+- **Coordination style selection** — first-run wizard asks about coordination style (protocol+forum, checkpoint, or neither) as a separate decision from team size.
+- **Auditor enhancements** — scans now check for playbook directories, checkpoint files, and librarian roles. Maturity assessment acknowledges checkpoint as equivalent to protocol.
+- **Builder enhancements** — new operations: bootstrap librarian, create playbook, set up checkpoint, restructure agents.
+
+### Changed
+
+- Standardized role names: forgemaster→orchestrator, smith→builder, keeper→librarian, assayer→auditor.
+- Renamed `agents.md` → `AGENTS.md` (uppercase, matches ecosystem convention).
+- Removed CLAUDE.md — users point their harness at AGENTS.md directly.
+- README rewritten to match the tone of the llms.thisminute.org/forge page: friendly, approachable, leads with what it does for you.
+- Orchestrator voice softened; audit cycle reframed as user-initiated (not an automatic loop).
+- All pattern templates updated to remove CLAUDE.md references.
+- Coding-discipline skill made harness-agnostic (no Claude Code-specific tool names).
+- Checkpoint pattern decoupled from `.claude/` directory.
+- Quickstart pinned to v0.5.
 
 ## [0.4] - 2026-03-15
 
@@ -77,7 +89,8 @@ This project uses 0.x versioning.
 - Self-upgrade mechanism via upstream tag checking
 - README with quickstart and structure docs
 
-[Unreleased]: https://github.com/skondrashov/agent-forge/compare/v0.4...HEAD
+[Unreleased]: https://github.com/skondrashov/agent-forge/compare/v0.5...HEAD
+[0.5]: https://github.com/skondrashov/agent-forge/compare/v0.4...v0.5
 [0.4]: https://github.com/skondrashov/agent-forge/compare/v0.3...v0.4
 [0.3]: https://github.com/skondrashov/agent-forge/compare/v0.2...v0.3
 [0.2]: https://github.com/skondrashov/agent-forge/compare/v0.1...v0.2

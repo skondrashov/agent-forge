@@ -7,11 +7,11 @@
 | Pattern | <!-- project columns --> |
 |---------|--------------------------|
 | Standalone PROTOCOL.md | |
-| AGENTS.md (separate from CLAUDE.md) | |
-| Slim AGENTS.md + ref/ docs | |
+| Slim AGENTS.md (entry point) | |
+| AGENTS.md + ref/ docs | |
 | Timestamp in startup | |
 | Shutdown reflection | |
-| Keeper feedback loop | |
+| Librarian feedback loop | |
 | Role file ref doc routing | |
 | Forum voting minimums | |
 | Agent role files in agents/ | |

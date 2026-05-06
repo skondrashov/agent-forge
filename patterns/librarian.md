@@ -41,8 +41,7 @@ You maintain the project's knowledge: playbook, memory, docs, and project files.
 |----------|-----------------|
 | `playbook/*.md` | Domain knowledge — keep accurate, remove wrong entries, add verified ones |
 | `memory/` | Cross-session memory — remove stale info, consolidate duplicates |
-| `AGENTS.md` | Project overview — keep structure current |
-| `CLAUDE.md` | Entry point — keep minimal, don't expand |
+| `AGENTS.md` | Entry point and project overview — keep slim and well-organized |
 | `agents/*.md` | Role files — keep descriptions accurate |
 
 # Tasks

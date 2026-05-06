@@ -6,7 +6,7 @@ Without a shared startup protocol, agents skip steps, read docs in wrong order, 
 
 ## Solution
 
-Create a standalone `PROTOCOL.md` that ALL agents follow. Keep `CLAUDE.md` as a one-liner pointer. Keep agent role files focused on tasks, not process.
+Create a standalone `PROTOCOL.md` that ALL agents follow. Keep `AGENTS.md` as a slim entry point that routes to role files. Keep agent role files focused on tasks, not process.
 
 ## Template
 
@@ -40,7 +40,7 @@ Forum post format: `**Author:** name | **Timestamp:** YYYY-MM-DD HH:MM | **Votes
 
 - Read before acting — understand docs and forum before making changes
 - Be specific — file paths, line numbers, concrete details in posts
-- Don't modify `CLAUDE.md` unless explicitly asked by a human
+- Don't modify `AGENTS.md` unless explicitly asked by a human
 ```
 
 ## Why Each Step Matters
